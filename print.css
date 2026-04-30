@@ -1,0 +1,11 @@
+body { font-size: 11pt; font-family: Arial, sans-serif; }
+.print-container { max-width: 800px; margin: 0 auto; }
+table { width: 100%; border-collapse: collapse; font-size: 10pt; }
+th, td { border: 1px solid #333; padding: 4px 6px; }
+th { background: #e0e0e0; font-weight: bold; }
+.form-header { text-align: center; margin-bottom: 12pt; }
+.form-header h4 { margin: 0; font-size: 13pt; }
+.form-header p  { margin: 2px 0; font-size: 10pt; }
+.signature-block { margin-top: 24pt; }
+.signature-line  { border-top: 1px solid #333; width: 200px; display: inline-block; }
+@media print { @page { margin: 1cm; } button { display: none; } }
