@@ -1,0 +1,25 @@
+<?php $pageTitle = 'ICS ' . htmlspecialchars($row['ics_number']); ?>
+<div class="d-flex justify-content-between mb-3">
+  <a href="<?= BASE_URL ?>/index.php?mod=ics&act=index" class="text-decoration-none">
+    <i class="bi bi-arrow-left me-1"></i>Back to ICS List</a>
+  <a href="<?= BASE_URL ?>/index.php?mod=ics&act=print&id=<?= $row['ics_id'] ?>"
+     target="_blank" class="btn btn-outline-dark btn-sm"><i class="bi bi-printer me-1"></i>Print ICS</a>
+</div>
+<div class="card" style="max-width:700px"><div class="card-body">
+  <h5 class="fw-bold border-bottom pb-2 mb-3">INVENTORY CUSTODIAN SLIP</h5>
+  <dl class="row">
+    <dt class="col-4">ICS No.</dt><dd class="col-8"><?= htmlspecialchars($row['ics_number']) ?></dd>
+    <dt class="col-4">Date</dt><dd class="col-8"><?= date('F d, Y', strtotime($row['ics_date'])) ?></dd>
+    <dt class="col-4">Item</dt><dd class="col-8 fw-semibold"><?= htmlspecialchars($row['item_name']) ?></dd>
+    <dt class="col-4">Property No.</dt><dd class="col-8"><?= htmlspecialchars($row['property_no']) ?></dd>
+    <dt class="col-4">Quantity</dt><dd class="col-8"><?= number_format((float)$row['quantity'],2) ?> <?= $row['unit_of_measure'] ?></dd>
+    <dt class="col-4">Unit Cost</dt><dd class="col-8">&#8369; <?= number_format((float)$row['unit_cost'],2) ?></dd>
+    <dt class="col-4">Total Cost</dt><dd class="col-8 fw-bold">&#8369; <?= number_format((float)$row['total_cost'],2) ?></dd>
+    <dt class="col-4">Est. Life</dt><dd class="col-8"><?= htmlspecialchars($row['estimated_life']) ?></dd>
+    <dt class="col-4">Location</dt><dd class="col-8"><?= htmlspecialchars($row['location']) ?></dd>
+    <dt class="col-4">Assigned To</dt><dd class="col-8 fw-semibold"><?= htmlspecialchars($row['assigned_to']) ?></dd>
+    <dt class="col-4">Position</dt><dd class="col-8"><?= htmlspecialchars($row['position']) ?></dd>
+    <dt class="col-4">Office</dt><dd class="col-8"><?= htmlspecialchars($row['office_name']) ?></dd>
+    <dt class="col-4">Status</dt><dd class="col-8"><span class="badge status-<?= $row['status'] ?>"><?= ucfirst($row['status']) ?></span></dd>
+  </dl>
+</div></div>
